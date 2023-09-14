@@ -31,7 +31,6 @@ limited labelled data.
 
 <hr>
 
-TO DO:
 ### Data Preprocessing
 
 The first step is to encode the texts into feature vectors. The following steps have been taken:
@@ -65,4 +64,37 @@ To assess the performance of the models, the following evaluation metrics have b
 
 3. **Macro F1-Score**
 
+TO DO
+<hr></hr>
+
+## Files
+
+1. Read_data.R
+   - Read original data
+   - Outlier Detection
+   - Discretization
+   - Write to CSV to use in python
+2. Preprocessing.R
+   - Check for null values
+   - Plot the correlation of each feature with the target variable
+3. Resampling_and_RFE.ipynb
+   - Resampling
+   - RFECV Recursive feature elimination with cross-validation
+   - Write to CSV to use in R
+4. read_new_data.R
+   - Read resampled data 
+   - Drop discarted variables
+5. PC_and_HC_for_BN.R
+   - PC algorithm to create dag
+   - Hill climbing algorithm to create dag 
+6. BN_final.R
+   - Create two manual dags, dag 3 and 4 in report 
+   - Plot the dags
+   - Fit the models on the training data
+   - Predict on the testing set
+   - Evaluate the predictions
+7. RandomForest.R
+   - Fit the Random Forest model on the training set
+   - Predict on the test set 
+   - Evaluate the results
 
