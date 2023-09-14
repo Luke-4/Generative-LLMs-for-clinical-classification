@@ -34,39 +34,35 @@ limited labelled data.
 TO DO:
 ### Data Preprocessing
 
-Before diving into machine learning models, it's essential to preprocess the data to ensure its quality and suitability for analysis. The following steps have been taken:
+The first step is to encode the texts into feature vectors. The following steps have been taken:
 
-1. **Resampling Techniques:** 
-   - Repeated Edited Nearest Neighbours (Undersampling)
-   - Random Over Sampler (Oversampling)
+1. **Encoding the texts:** 
+   - Extract the embeddings from all the models before and after fine-tuning
 
-2. **Standardization**
+2. **Fine tunning**
+   - Low Rank Adaptation (LoRA) 
 
-3. **Feature Selection:** 
-   - Recursive Feature Elimination
+3. **Oversampling:** 
+   - Synthetic Minority Over-sampling Technique (SMOTE)
 
-### Machine Learning Models
+### Classification Models
 
-Here are the models implemented:
+The two stages of the experiment employ diferent classification techniques, first the embeddings are extracted and classified using a SVC before and after fine tunning. In the second stage the models are classified directly by the LLMs by aplying a liniar head on top of the model. Here are the models implemented:
 
-1. **Decision Tree Classifier**
+1. **Support Vector Classifier**
 
-2. **Logistic Regression**
+2. **Model for sequence classification**
+   - To do this AutoModelForSequenceClassification model class was used, this aplies a linear head on top of the base model to perform the classification directly. 
 
-3. **Support Vector Machine**
 
 ### Model Evaluation
 
-To assess the performance of the machine learning models, the following evaluation metrics have been utilized:
+To assess the performance of the models, the following evaluation metrics have been utilized:
 
 1. **Precision**
 
 2. **Recall**
 
-3. **F1-Score**
+3. **Macro F1-Score**
 
-### Hyperparameter Tuning
 
-Fine-tuning the model parameters is crucial for achieving optimal performance.
-
-1. **Grid Search**
